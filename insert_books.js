@@ -1,10 +1,11 @@
+/* eslint-disable linebreak-style */
 // insert_books.js - Script to populate MongoDB with sample book data
 
 // Import MongoDB client
 const { MongoClient } = require('mongodb');
 
 // Connection URI (replace with your MongoDB connection string if using Atlas)
-const uri = 'mongodb://localhost:27017';
+const uri = 'mongodb+srv://mosesmolepo01:2o4B8N4GFjJJ0W30@cluster0.9emjcuw.mongodb.net/?retryWrites=true&w=majority';
 
 // Database and collection names
 const dbName = 'plp_bookstore';
@@ -20,7 +21,7 @@ const books = [
     price: 12.99,
     in_stock: true,
     pages: 336,
-    publisher: 'J. B. Lippincott & Co.'
+    publisher: 'J. B. Lippincott & Co.',
   },
   {
     title: '1984',
@@ -30,7 +31,7 @@ const books = [
     price: 10.99,
     in_stock: true,
     pages: 328,
-    publisher: 'Secker & Warburg'
+    publisher: 'Secker & Warburg',
   },
   {
     title: 'The Great Gatsby',
@@ -40,7 +41,7 @@ const books = [
     price: 9.99,
     in_stock: true,
     pages: 180,
-    publisher: 'Charles Scribner\'s Sons'
+    publisher: 'Charles Scribner\'s Sons',
   },
   {
     title: 'Brave New World',
@@ -50,7 +51,7 @@ const books = [
     price: 11.50,
     in_stock: false,
     pages: 311,
-    publisher: 'Chatto & Windus'
+    publisher: 'Chatto & Windus',
   },
   {
     title: 'The Hobbit',
@@ -60,7 +61,7 @@ const books = [
     price: 14.99,
     in_stock: true,
     pages: 310,
-    publisher: 'George Allen & Unwin'
+    publisher: 'George Allen & Unwin',
   },
   {
     title: 'The Catcher in the Rye',
@@ -70,7 +71,7 @@ const books = [
     price: 8.99,
     in_stock: true,
     pages: 224,
-    publisher: 'Little, Brown and Company'
+    publisher: 'Little, Brown and Company',
   },
   {
     title: 'Pride and Prejudice',
@@ -80,7 +81,7 @@ const books = [
     price: 7.99,
     in_stock: true,
     pages: 432,
-    publisher: 'T. Egerton, Whitehall'
+    publisher: 'T. Egerton, Whitehall',
   },
   {
     title: 'The Lord of the Rings',
@@ -90,7 +91,7 @@ const books = [
     price: 19.99,
     in_stock: true,
     pages: 1178,
-    publisher: 'Allen & Unwin'
+    publisher: 'Allen & Unwin',
   },
   {
     title: 'Animal Farm',
@@ -100,7 +101,7 @@ const books = [
     price: 8.50,
     in_stock: false,
     pages: 112,
-    publisher: 'Secker & Warburg'
+    publisher: 'Secker & Warburg',
   },
   {
     title: 'The Alchemist',
@@ -110,7 +111,7 @@ const books = [
     price: 10.99,
     in_stock: true,
     pages: 197,
-    publisher: 'HarperOne'
+    publisher: 'HarperOne',
   },
   {
     title: 'Moby Dick',
@@ -120,7 +121,7 @@ const books = [
     price: 12.50,
     in_stock: false,
     pages: 635,
-    publisher: 'Harper & Brothers'
+    publisher: 'Harper & Brothers',
   },
   {
     title: 'Wuthering Heights',
@@ -130,8 +131,8 @@ const books = [
     price: 9.99,
     in_stock: true,
     pages: 342,
-    publisher: 'Thomas Cautley Newby'
-  }
+    publisher: 'Thomas Cautley Newby',
+  },
 ];
 
 // Function to insert books into MongoDB
@@ -165,7 +166,6 @@ async function insertBooks() {
     insertedBooks.forEach((book, index) => {
       console.log(`${index + 1}. "${book.title}" by ${book.author} (${book.published_year})`);
     });
-
   } catch (err) {
     console.error('Error occurred:', err);
   } finally {
@@ -195,4 +195,4 @@ insertBooks().catch(console.error);
  *
  * 5. Find in-stock books:
  *    db.books.find({ in_stock: true })
- */ 
+ */
