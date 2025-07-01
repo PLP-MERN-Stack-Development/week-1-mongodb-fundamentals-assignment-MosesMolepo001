@@ -178,6 +178,13 @@ async function insertBooks() {
 // Run the function
 insertBooks().catch(console.error);
 
+// Display the inserted books
+console.log('\nInserted books:');
+const insertedBooks = await collection.find({}).toArray();
+insertedBooks.forEach((book, index) => {
+  console.log(`${index + 1}. "${book.title}" by ${book.author} (${book.published_year})`);
+});
+
 /*
  * Example MongoDB queries you can try after running this script:
  *
